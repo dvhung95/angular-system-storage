@@ -11,6 +11,11 @@
     "redux storage",
     "store storage"
   ],
+  "homepage": "https://github.com/dvhung95/angular-system-storage",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvhung95/angular-system-storage.git"
+  },
   "peerDependencies": {
     "@angular/common": "^11.1.2",
     "@angular/core": "^11.1.2"
