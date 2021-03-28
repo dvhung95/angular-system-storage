@@ -1,27 +1,65 @@
-# AngularSystemStorageWorkspace
+# Angular System Storage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+Angular System Storage is a library what provides storage on Angular programme. Indeed, **systemStorage** is similar to **localStorage**, however, systemStorage will be cleared when page is reloaded or a tab/window ends.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [Installation](#installation)
+* [Usage](#Usage)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Use the package manager [NPM](https://www.npmjs.com/) to install Angular System Storage.
 
-## Build
+```bash
+npm install angular-system-storage
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Usage
 
-## Running unit tests
+1. Import `SystemStorageModule` once only in `AppModule`
+```typescript
+import { SystemStorageModule } from "system-storage";
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  imports: [
+    SystemStorageModule
+  ],
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+2. Inject `SystemStorageService` in component that uses system storage
+```typescript
+import { ISystemStorageService, SYSTEM_STORAGE_SERVICE_TOKEN } from 'system-storage';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+export class TestComponent {
+  constructor(
+    @Inject(SYSTEM_STORAGE_SERVICE_TOKEN) private systemStorage: ISystemStorageService,
+  ) { }
+}
+```
 
-## Further help
+3. Available methods of `systemStorage`
+```typescript
+// save data to systemStorage
+systemStorage.setItem('key', value);
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+// get saved data from systemStorage
+let data = systemStorage.getItem('key');
+
+// remove saved data from systemStorage
+systemStorage.removeItem('key');
+
+// remove all saved data from systemStorage
+systemStorage.clearStorage();
+```
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://github.com/dvhung95/angular-system-storage/blob/master/LICENSE)
