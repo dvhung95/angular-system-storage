@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "angular-system-storage": {
+      "projectType": "library",
+      "root": "projects/angular-system-storage",
+      "sourceRoot": "projects/angular-system-storage/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/angular-system-storage/tsconfig.lib.json",
+            "project": "projects/angular-system-storage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-system-storage/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-system-storage/src/test.ts",
+            "tsConfig": "projects/angular-system-storage/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-system-storage/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-system-storage/tsconfig.lib.json",
+              "projects/angular-system-storage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular-system-storage"
 }
