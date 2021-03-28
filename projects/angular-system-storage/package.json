@@ -16,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/dvhung95/angular-system-storage.git"
   },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^11.1.2",
     "@angular/core": "^11.1.2"

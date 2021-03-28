@@ -43,16 +43,16 @@ export class TestComponent {
 3. Available methods of `systemStorage`
 ```typescript
 // save data to systemStorage
-systemStorage.setItem('key', value);
+this.systemStorage.setItem('key', value);
 
 // get saved data from systemStorage
-let data = systemStorage.getItem('key');
+let data = this.systemStorage.getItem('key');
 
 // remove saved data from systemStorage
-systemStorage.removeItem('key');
+this.systemStorage.removeItem('key');
 
 // remove all saved data from systemStorage
-systemStorage.clearStorage();
+this.systemStorage.clearStorage();
 ```
 
 ## Contributing
