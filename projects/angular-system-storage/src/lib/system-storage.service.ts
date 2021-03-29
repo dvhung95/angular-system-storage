@@ -5,34 +5,30 @@ import { ISystemStorageService } from './system-storage-service.interface';
   providedIn: 'root'
 })
 export class SystemStorageService implements ISystemStorageService {
-
   /** PRIVATE PROPERTIES */
-  private items: { [key: string]: any } = {};
-
-  /** CONSTRUCTOR */
-  constructor() { }
+  private _items: { [key: string]: any } = {};
 
   /** PUBLIC METHODS */
   /**
    * set item
    */
   public setItem(key: string, value: any): void {
-    this.items[key] = value;
+    this._items[key] = value;
   }
 
   /**
    * get item by key
    */
   public getItem(key: string): any {
-    return this.items[key];
+    return this._items[key];
   }
 
   /**
    * remove item by key
    */
   public removeItem(key: string): void {
-    if (this.items.hasOwnProperty(key)) {
-      delete this.items[key];
+    if (this._items.hasOwnProperty(key)) {
+      delete this._items[key];
     }
   }
 
@@ -40,8 +36,6 @@ export class SystemStorageService implements ISystemStorageService {
    * clear all items
    */
   public clearStorage(): void {
-    Object.keys(this.items).forEach((key) => {
-      delete this.items[key];
-    });
+    this._items = {};
   }
 }
