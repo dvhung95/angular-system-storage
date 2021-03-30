@@ -19,7 +19,7 @@ npm install angular-system-storage
 
 1. Import `SystemStorageModule` once only in `AppModule`
 ```typescript
-import { SystemStorageModule } from "system-storage";
+import { SystemStorageModule } from "angular-system-storage";
 
 @NgModule({
   imports: [
@@ -31,7 +31,7 @@ export class AppModule { }
 
 2. Inject `SystemStorageService` in component that uses system storage
 ```typescript
-import { ISystemStorageService, SYSTEM_STORAGE_SERVICE_TOKEN } from 'system-storage';
+import { ISystemStorageService, SYSTEM_STORAGE_SERVICE_TOKEN } from 'angular-system-storage';
 
 export class TestComponent {
   constructor(
