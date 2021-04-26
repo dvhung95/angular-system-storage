@@ -1,6 +1,6 @@
 # Angular System Storage
 
-Angular System Storage is a library what provides storage on Angular programme. Indeed, **systemStorage** is similar to **localStorage**, however, systemStorage will be cleared when page is reloaded or a tab/window ends.
+Angular System Storage is a library what provides in-memory storage on Angular programme. Indeed, **systemStorage** is similar to **localStorage**, however, systemStorage will be cleared when page is reloaded or a tab/window ends.
 
 ## Table of contents
 
@@ -9,7 +9,7 @@ Angular System Storage is a library what provides storage on Angular programme. 
 
 ## Installation
 
-Use the package manager [NPM](https://www.npmjs.com/) to install Angular System Storage.
+Use the package manager [NPM](https://www.npmjs.com/package/angular-system-storage) to install Angular System Storage.
 
 ```bash
 npm install angular-system-storage
